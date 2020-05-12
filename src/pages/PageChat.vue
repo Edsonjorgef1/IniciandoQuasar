@@ -24,7 +24,8 @@
             dense
           >
             <template v-slot:after>
-              <q-btn round dense flat type="submit" color="white" icon="send" />
+              <q-btn round dense flat color="white" icon="send" />
+              <!-- type="submit" @Falhando novamente -->
             </template>
           </q-input>
         </q-form>
@@ -50,12 +51,16 @@ export default {
   methods: {
     ...mapActions("store", [
       "firebaseGetMessages",
-      "firebaseStopGettingMessages"
+      "firebaseStopGettingMessages",
+      "firebaseSendMessage"
     ]),
     sendMessage() {
-      this.messages.push({
-        text: this.newMessage,
-        from: "me"
+      this.firebaseSendMessage({
+        message: {
+          text: this.newMessage,
+          from: "me"
+        },
+        otherUserId: this.$route.params.otherUserId
       });
     }
   },
