@@ -24,7 +24,8 @@
             dense
           >
             <template v-slot:after>
-              <q-btn round dense flat type="submit" color="white" icon="send" />
+              <q-btn round dense flat color="white" icon="send" />
+              <!-- type="submit"  com esse submit falha, nem sei porque!!! -->
             </template>
           </q-input>
         </q-form>
