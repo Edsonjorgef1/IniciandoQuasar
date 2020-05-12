@@ -24,8 +24,7 @@
             dense
           >
             <template v-slot:after>
-              <q-btn round dense flat color="white" icon="send" />
-              <!-- type="submit"  com esse submit falha, nem sei porque!!! -->
+              <q-btn round dense flat type="submit" color="white" icon="send" />
             </template>
           </q-input>
         </q-form>
@@ -35,33 +34,34 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default {
   data() {
     return {
-      newMessage: "",
-      messages: [
-        {
-          text: "Hey dude, how are you?",
-          from: "me"
-        },
-        {
-          text: "Good thanks, bro! How are you?",
-          from: "them"
-        },
-        {
-          text: "Pretty good!",
-          from: "me"
-        }
-      ]
+      newMessage: ""
     };
   },
+  computed: {
+    ...mapState("store", ["messages"])
+  },
   methods: {
+    ...mapActions("store", [
+      "firebaseGetMessages",
+      "firebaseStopGettingMessages"
+    ]),
     sendMessage() {
       this.messages.push({
         text: this.newMessage,
         from: "me"
       });
     }
+  },
+  mounted() {
+    this.firebaseGetMessages(this.$route.params.otherUserId);
+  },
+  destroyed() {
+    this.firebaseStopGettingMessages();
   }
 };
 </script>
