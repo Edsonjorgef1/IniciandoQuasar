@@ -4,7 +4,7 @@
       v-if="!otherUserDetails.online"
       class="bg-grey-4 text-center fixed-top"
     >
-      {{ otherUserDetails.name }} is offline.
+      {{ otherUserDetails.name }} está offline.
     </q-banner>
     <div
       :class="{ invisible: !showMessages }"

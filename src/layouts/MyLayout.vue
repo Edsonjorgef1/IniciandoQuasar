@@ -8,7 +8,7 @@
           icon="arrow_back"
           flat
           dense
-          label="Back"
+          label="Voltar"
         />
 
         <q-toolbar-title class="absolute-center">
@@ -34,7 +34,7 @@
           flat
           dense
         >
-          Logout<br />
+          Logout <br />
           {{ userDetails.name }}
         </q-btn>
       </q-toolbar>
@@ -56,9 +56,9 @@ export default {
     ...mapState("store", ["userDetails"]),
     title() {
       let currentPath = this.$route.fullPath;
-      if (currentPath == "/") return "SmackChat";
+      if (currentPath == "/") return "Usuários Cadastrados";
       else if (currentPath.includes("/chat")) return this.otherUserDetails.name;
-      else if (currentPath == "/auth") return "Login";
+      else if (currentPath == "/auth") return "Autenticação";
     }
   },
   methods: {

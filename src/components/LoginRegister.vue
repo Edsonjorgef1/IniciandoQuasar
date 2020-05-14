@@ -5,25 +5,26 @@
       v-model="formData.name"
       class="q-mb-md"
       outlined
-      label="Name"
+      label="Seu Nome "
     />
     <q-input
       v-model="formData.email"
       class="q-mb-md"
       outlined
       type="email"
-      label="Email"
+      label="Seu Email"
     />
     <q-input
       v-model="formData.password"
       class="q-mb-md"
       outlined
       type="password"
-      label="Password"
+      label="Sua Palavra-Passe"
     />
     <div class="row">
       <q-space />
       <q-btn color="primary" type="submit" :label="tab" />
+      <!-- <q-btn color="red" type="submit" :label="tab" /> -->
     </div>
   </q-form>
 </template>
