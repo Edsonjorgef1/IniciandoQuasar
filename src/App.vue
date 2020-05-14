@@ -17,4 +17,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.darkmode-layer,
+.darkmode-toggle {
+  z-index: 500;
+}
+</style>
