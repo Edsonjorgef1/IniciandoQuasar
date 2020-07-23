@@ -1,6 +1,6 @@
 # SmackChat (smackchat)
 
-A Quasar Framework app
+MY STUDY ON THE QUASAR FRAMEWORK WITH [DANNY](https://www.youtube.com/watch?v=Kfg789g_UTg&list=PLAiDzIdBfy8iZTjdu3mjNglucWadtLG1v)
 
 ## Install the dependencies
 ```bash
